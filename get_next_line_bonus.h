@@ -22,7 +22,13 @@
 # define BUFFER_SIZE 255
 #endif
 
+typedef struct filed_s {
+	int fd;
+	char* buffer;
+} filed_t;
 
+filed_t* get_filed(int fd);
+void free_fd(int fd);
 int find_char(char* haystack, char needle);
 size_t ft_strlen(const char* str);
 char* splice(char** str, size_t splice_len);
